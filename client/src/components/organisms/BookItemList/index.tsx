@@ -10,7 +10,7 @@ const BookItemList = ({ data }: Props) => {
   return (
     <ListContainer>
       {data.map(({ id, author, title }) => (
-        <BookItem key={id} author={author} title={title} />
+        <BookItem key={id} id={id} author={author} title={title} />
       ))}
     </ListContainer>
   );
