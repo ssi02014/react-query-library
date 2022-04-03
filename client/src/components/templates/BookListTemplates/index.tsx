@@ -11,9 +11,19 @@ const BookListTemplates = () => {
     Error
   >("book", requestGetAllBooks);
 
-  if (isLoading) return <span>로딩중입니다</span>;
+  if (isLoading) {
+    return (
+      <Container>
+        <span>로딩중입니다</span>
+      </Container>
+    );
+  }
   if (isError) {
-    return <span>Error: {error.message}</span>;
+    return (
+      <Container>
+        <span>Error: {error.message}</span>
+      </Container>
+    );
   }
   return <Container>{data && <BookItemList data={data} />}</Container>;
 };

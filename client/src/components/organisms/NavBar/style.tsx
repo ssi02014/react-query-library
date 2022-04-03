@@ -22,7 +22,6 @@ export const NavBarContainer = styled.header`
   }
 
   img {
-    width: 20px;
     margin-right: 4px;
   }
 `;
