@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     margin: 0 auto;
-    max-width: 640px;
+    max-width: 1024px;
   }
   ul, ol {
     list-style: none;
