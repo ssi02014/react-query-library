@@ -16,9 +16,27 @@ export const getAPI = async (url: string, params?: any, options?: any) => {
   return response;
 };
 
-export const postAPI = async (url: string, data?: object, params?: object) => {
+export const postAPI = async <T extends {}, K>(
+  url: string,
+  data?: T,
+  params?: K
+) => {
   const response = await request({
     method: "GET",
+    url,
+    data,
+    params,
+  });
+  return response;
+};
+
+export const deleteAPI = async <T extends {}, K>(
+  url: string,
+  data?: T,
+  params?: K
+) => {
+  const response = await request({
+    method: "DELETE",
     url,
     data,
     params,

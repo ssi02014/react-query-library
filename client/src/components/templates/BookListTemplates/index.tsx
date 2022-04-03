@@ -9,7 +9,7 @@ const BookListTemplates = () => {
   const { data, error, isLoading, isError } = useQuery<
     IBookListResponse[],
     Error
-  >("book", requestGetAllBooks);
+  >("books", requestGetAllBooks);
 
   if (isLoading) {
     return (
