@@ -1,7 +1,8 @@
 import React from "react";
+import UpdateBookTemplate from "../../components/templates/UpdateBookTemplate";
 
 const UpdateBook = () => {
-  return <div>북업데이트</div>;
+  return <UpdateBookTemplate />;
 };
 
 export default UpdateBook;

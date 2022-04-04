@@ -3,7 +3,8 @@ import { StyledButton } from "./style";
 
 interface Props {
   children: React.ReactNode;
-  onClick: () => void;
+  onClick?: () => void;
+  fullWidth?: boolean;
   color?: "primary";
   shape?: "rect" | "round";
   ml?: string;
@@ -15,6 +16,7 @@ const Button = ({
   children,
   color = "primary",
   shape = "round",
+  fullWidth = false,
   ml = "0",
   mr = "0",
   mt = "0",
@@ -29,6 +31,7 @@ const Button = ({
       mb={mb}
       shape={shape}
       color={color}
+      fullWidth={fullWidth}
       onClick={onClick}
     >
       {children}

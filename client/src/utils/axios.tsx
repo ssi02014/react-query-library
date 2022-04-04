@@ -44,4 +44,18 @@ export const deleteAPI = async <T extends {}, K>(
   return response;
 };
 
+export const putAPI = async <T extends {}, K>(
+  url: string,
+  data?: T,
+  params?: K
+) => {
+  const response = await request({
+    method: "PUT",
+    url,
+    data,
+    params,
+  });
+  return response;
+};
+
 export default request;

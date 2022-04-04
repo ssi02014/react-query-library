@@ -6,12 +6,14 @@ import BookItemList from "../../organisms/BookItemList";
 import { Container } from "./style";
 
 const BookListTemplates = () => {
-  const { data, error, isLoading, isError } = useQuery<
+  const { data, error, isLoading, isError, isFetching } = useQuery<
     IBookListResponse[],
     Error
   >("books", requestGetAllBooks);
 
-  if (isLoading) {
+  console.log(isLoading, isFetching);
+
+  if (isLoading || isFetching) {
     return (
       <Container>
         <span>로딩중입니다</span>
