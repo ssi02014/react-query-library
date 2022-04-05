@@ -1,6 +1,5 @@
-import { QueryFunctionContext } from "react-query";
 import { IBookListResponse } from "../interfaces/book";
-import { deleteAPI, getAPI, putAPI } from "../utils/axios";
+import { deleteAPI, getAPI, postAPI, putAPI } from "../utils/axios";
 
 export const requestGetAllBooks = async () => {
   try {
@@ -32,6 +31,21 @@ export const requestRemoveBook = async (id: string) => {
 export const requestUpdateBook = async ({ id, ...data }: IBookListResponse) => {
   try {
     const response = await putAPI(`/books/${id}`, data);
+    return response.data;
+  } catch (err: any) {
+    throw new Error("Something went wrong");
+  }
+};
+
+interface Data {
+  author: string;
+  title: string;
+  id: string;
+}
+export const requestPostBook = async (data: Data) => {
+  try {
+    const response = await postAPI(`/books`, data);
+    console.log(response);
     return response.data;
   } catch (err: any) {
     throw new Error("Something went wrong");

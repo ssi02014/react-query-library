@@ -22,7 +22,7 @@ export const postAPI = async <T extends {}, K>(
   params?: K
 ) => {
   const response = await request({
-    method: "GET",
+    method: "POST",
     url,
     data,
     params,

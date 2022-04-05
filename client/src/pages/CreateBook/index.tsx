@@ -1,7 +1,8 @@
 import React from "react";
+import CreateBookTemplate from "../../components/templates/CreateBookTemplate";
 
 const CreateBook = () => {
-  return <div>북추가</div>;
+  return <CreateBookTemplate></CreateBookTemplate>;
 };
 
 export default CreateBook;

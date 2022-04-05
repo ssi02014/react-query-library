@@ -4,11 +4,17 @@ import FormInput from "../../molecules/FormInput";
 import { Form, InputContainer } from "./style";
 
 interface Props {
-  defaultValues: any;
   isLoading: boolean;
   onFormSubmit: (data: any) => void;
+  isCreate?: boolean;
+  defaultValues?: any;
 }
-const BookForm = ({ defaultValues, isLoading, onFormSubmit }: Props) => {
+const BookForm = ({
+  isCreate,
+  defaultValues,
+  isLoading,
+  onFormSubmit,
+}: Props) => {
   const [formValues, setFormValues] = useState({
     id: "",
     author: "",
@@ -29,11 +35,21 @@ const BookForm = ({ defaultValues, isLoading, onFormSubmit }: Props) => {
   };
 
   useEffect(() => {
-    setFormValues(defaultValues);
+    if (defaultValues) setFormValues(defaultValues);
   }, [defaultValues]);
 
   return (
     <Form onSubmit={onSubmit}>
+      <InputContainer>
+        {isCreate && (
+          <FormInput
+            label="ID"
+            value={formValues.id}
+            id="id"
+            onChange={onChange}
+          />
+        )}
+      </InputContainer>
       <InputContainer>
         <FormInput
           label="Title"
