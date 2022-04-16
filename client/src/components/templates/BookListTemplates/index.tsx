@@ -11,8 +11,6 @@ const BookListTemplates = () => {
     Error
   >("books", requestGetAllBooks);
 
-  console.log(isLoading, isFetching);
-
   if (isLoading || isFetching) {
     return (
       <Container>
